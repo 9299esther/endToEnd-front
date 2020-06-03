@@ -1,6 +1,6 @@
 import React from 'react'
 export default function Home() {
-    return<>
-        <h1>Home page</h1>
-    </>
+    return<main>
+        <h1>New at shope</h1>
+    </main>
 }

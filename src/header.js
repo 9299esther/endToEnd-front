@@ -6,11 +6,22 @@ import Cart from './cart'
 
 export default function Header() {
     return <header>
-        <Menu />
-        <Link to='/' >
-            <Logo />
-        </Link>
+        <div className='cartToSearchDiv'>
         <Cart />
+
+        <Link  className='logoLinkToHomePage'  to='/'>
+            <Logo  />
+        </Link>
+        <form className='searchBar'>{/*onSubmit={handleSubmit}*/}
+            <section>
+                {/* <label>Search:</label> */}
+                <input type='text' placeholder='Enter a filter' />
+                <input type='submit' value='Search' />
+            </section>
+        </form>
+        </div>
+        <Menu />
+
     </header>
 
 }

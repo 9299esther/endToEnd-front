@@ -1,6 +1,9 @@
 import React from 'react'
 export default function Footer() {
-    return<>
-        <h1>Footer</h1>
-    </>
+
+    
+    return <footer>
+        <img className='copyRightImg' src='https://cdn.iconscout.com/icon/free/png-512/copyright-sign-1438489-1213998.png' alt='Copy right' />
+        <h4>Esther Schoemann</h4>
+    </footer>
 }
