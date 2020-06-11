@@ -3,22 +3,19 @@ body{
     background-size: cover;
 
 }
+header{
+    border-bottom:solid 1px oldlace;
+}
 .cartToSearchDiv{
     display: flex;
     justify-content: space-between;
 }
-.logoLinkToHomePage{
-    text-decoration: none;
-}
+
 .cartImg{
  height: 40px;
  width: 40px;
 }
-.copyRightImg{
-    height: 30px;
-    width: 30px;
-    padding: 5px;
-}
+
 .numOfItems{
     padding: 2px;
     height: 10px;
@@ -55,6 +52,29 @@ li{
     /* border: solid 1px royalblue; */
 }
 footer{
+    border-top:solid 1px oldlace;
+
     display: flex;
-    justify-content: center;
+    position: fixed;
+    bottom: 0;
+
+}
+.copyRightImg{
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+}
+.productViueDiv{
+    border:1px solid;
+    width: min-content;
+    border-radius:10px ;
+    padding: 5px;
+    margin: 10px;
+}
+.allProductsDiv{
+    margin-bottom: 2px;
+    margin:  5px;
+}
+.flaxDiv{
+    display: flex;
 }

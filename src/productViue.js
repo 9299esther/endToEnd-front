@@ -1,11 +1,14 @@
 import React from 'react'
 export default function ProductViue() {
-    return<div>
-        <h1>ProductViue</h1>
-        
-        <h2>price:  </h2>
-        <h3>name</h3>
-        <button>Add to cart</button>
+    return <div className='productViueDiv' >
 
+        <div className='flaxDiv'>
+            <h3>pix</h3>
+            <form>
+                <h2>ProductName</h2>
+                <h2>price:  </h2>
+                <button>Add to cart</button>
+            </form>
+        </div>
     </div>
 }
