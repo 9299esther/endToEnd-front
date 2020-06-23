@@ -5,6 +5,7 @@ import Header from './header'
 import Footer from './footer'
 import AllProducts from './allProducts'
 import ProductViue from './productViue'
+import AddProduct from './addProduct'
 
 
 
@@ -16,7 +17,9 @@ function App() {
       <Switch >
         <Route path='/' exact component={Home} />
         <Route path='/allProducts' exact component={AllProducts} />
-        <Route path='/productViue' exact component={ProductViue} />
+        <Route path='/productViue/:name'  component={ProductViue} />
+        <Route path='/AddProduct' exact component={AddProduct} />
+      
       </Switch>
       <Footer />
 

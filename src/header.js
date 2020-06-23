@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Menu from './menu';
 import Logo from './logo'
 import Cart from './cart'
+// import AddProduct from './addProduct'
 
 export default function Header() {
     return <header>
@@ -21,7 +22,9 @@ export default function Header() {
         </form>
         </div>
         <Menu />
-
+        <Link to='/addProduct'>
+               <div className='addProductDiv'><b>+</b></div>
+        </Link>
     </header>
 
 }

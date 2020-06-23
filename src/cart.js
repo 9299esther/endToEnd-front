@@ -1,8 +1,8 @@
 import React from 'react'
 export default function cart() {
     return <div >
-        <img className='cartImg' src='https://cdn.iconscout.com/icon/premium/png-256-thumb/cart-832-1159525.png' alt='cart img' />
-        <div className='numOfItems'>@</div>
+        <img className='cartImg'  src='https://cdn.iconscout.com/icon/premium/png-256-thumb/cart-832-1159525.png' alt='cart img' />
+        <div className='numOfItems'> 0</div>
         <div className='cartValue'>
             <h3>Cart:</h3>
             <br />
