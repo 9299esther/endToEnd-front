@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 // import ProductViue from './productViue'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function AllProducts() {
     const [products, setProducts] = useState([])
-    // localStorage.products =[]
     const [allProducts, setAllProducts] = useState([])
-    // var allProducts=[]
+    const [limit, setLimit] = useState(5)
+    const [lodeMore, setLodeMore] = useState(true)
+
 
     async function fetchProducts() {
         try {
@@ -57,33 +58,42 @@ export default function AllProducts() {
         //
         setAllProducts(name)
         console.log(allProducts);
-
-        //localStorage.setItem("products",JSON.stringify(carntProducts))
     }
-    return <div>
-        <div>
-            <div onClick={() => sortBypice()}>Price <img src="https://img.icons8.com/small/16/000000/sort.png" alt='sortIcon' /></div>
-            <div onClick={() => sortByName()}>Name <img src="https://img.icons8.com/small/16/000000/sort.png" alt='sortIcon' /></div>
-            <input className='slider' onClick={() => FilterByPrice()}/*  value='50' */ type="range" min="0" max="500" />
-            <div className='output'></div>
-            <label>Price range</label>
-        </div>
-        {products.map(product =>
-            <div className='productViueDiv' >
-
-                <div className='flaxDiv'>
-                    <img src={product.image} alt='pix' className='productPixsizeing' />
-                    <form onSubmit={setCart}>
-                        {/* <Link to={ `/productViue/${product.name}` } > { product.name }</Link> */}
-                        {/* <ProductViue name={product.name} /> */}
-                        <h2>{product.price} ₪</h2>
-
-                        <input type='submit' value='Add to cart' />
-                    </form>
-                </div>
+        //localStorage.setItem("products",JSON.stringify(carntProducts))
+        function isLodeMore() {
+            setLimit(limit + 5)
+            if (limit >= products.length)
+               setLodeMore(false)
+        }
+        return <div>
+            <div>
+                <div onClick={() => sortBypice()}>Price <img src="https://img.icons8.com/small/16/000000/sort.png" alt='sortIcon' /></div>
+                <div onClick={() => sortByName()}>Name <img src="https://img.icons8.com/small/16/000000/sort.png" alt='sortIcon' /></div>
+                <input className='slider' onClick={() => FilterByPrice()}/*  value='50' */ type="range" min="0" max="500" />
+                <div className='output'></div>
+                <label>Price range</label>
             </div>
-        )}
+            {products.slice(0, limit).map(product =>
+                <div key={product._id} className='productViueDiv' >
 
-    </div>
+                    <div className='flaxDiv'>
+                        <img src={product.image} alt='pix' className='productPixsizeing' />
+                        <form onSubmit={setCart}>
+                            {<Link to={{
+                                pathname: " /productViue",
+                                search: `?name=${product}`,
+                                hash: "#product.name",
+                                state: { fromDashboard: true }
+                            }} > {product.name}</Link>}
 
-}
+                            <h2>{product.price} ₪</h2>
+                            <input type='submit' value='Add to cart' />
+                        </form>
+                    </div>
+                </div>
+            )}
+            <div onClick={() => isLodeMore()}>{lodeMore ? 'Lode More' : ''}</div>
+
+        </div>
+
+    }

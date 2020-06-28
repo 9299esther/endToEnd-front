@@ -6,6 +6,7 @@ import Footer from './footer'
 import AllProducts from './allProducts'
 import ProductViue from './productViue'
 import AddProduct from './addProduct'
+import Adit from './adit'
 
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/allProducts' exact component={AllProducts} />
         <Route path='/productViue/:name'  component={ProductViue} />
         <Route path='/AddProduct' exact component={AddProduct} />
+        <Route path='/adit' exact component={Adit} />
       
       </Switch>
       <Footer />
